@@ -22,6 +22,12 @@
 
 - `vendor`: Contains all packages installed by Composer, including Symfony itself.
 
+## Important Notes
+
+```txt
+The PostgreSQL version in the Docker Image and local pg_dump has to match. Otherwise when running `symfony run pg_dump --data-only > dump.sql` will result in error like `pg_dump: error: aborting because of server version mismatch docker`
+```
+
 ## Notes
 
 **<https://symfony.com/doc/5.4/the-fast-track/en/3-zero.html#initializing-the-project>**
@@ -37,3 +43,13 @@
 > For configuration related to packages, YAML is the best choice. This is the format used in the config/ directory. Often, when you install a new package, that package's recipe will add a new file ending in .yaml to that directory. For configuration related to PHP code, attributes are a better choice as they are defined next to the code. Let me explain with an example. When a request comes in, some configuration needs to tell Symfony that the request path should be handled by a specific controller (a PHP class). When using YAML, XML or PHP configuration formats, two files are involved (the configuration file and the PHP controller file). When using attributes, the configuration is done directly in the controller class.
 
 > The #[Route('/conference', name: 'conference')] attribute is what makes the index() method a controller (the configuration is next to the code that it configures).
+
+## Cheat Sheets
+
+### Symfony Router
+
+![symfony-router](/assets/readme/routing-cheatsheet.png)
+
+### App Infrastructure
+
+![symfony-app-architecture](/assets/readme/infrastructure.png)
